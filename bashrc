@@ -10,6 +10,7 @@ if [ -f "$HOME/.myaliases" ]; then
         . "$HOME/.myaliases"
 fi
 
+export PS1="\[\033[1;31m\][\u@\h \W]\$ \[\033[0m\]"
 
 # User specific aliases
 alias plansource-devops="weechat irc://pr0fess0r@irc.freenode.net/#plansource-devops"
