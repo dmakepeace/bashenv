@@ -9,10 +9,10 @@ fi
 if [ -f "$HOME/.myaliases" ]; then
         . "$HOME/.myaliases"
 fi
-
 export PS1="\[\033[1;31m\][\u@\h \W]\$ \[\033[0m\]"
 
 # User specific aliases
+alias mnp="grep -v -E '^\s*$|^\s*#'"
 alias plansource-devops="weechat irc://pr0fess0r@irc.freenode.net/#plansource-devops"
 alias dm-centos6="ssh dmakepeace@10.8.100.105"
 alias tmf="ssh dmakepeace@themakepeacefamily.com"
@@ -39,7 +39,8 @@ alias which='(alias; declare -f) | /usr/bin/which --tty-only --read-alias --read
 # fortune - cowsay
 #test -x /usr/games/fortune && /usr/games/fortune -s | cowsay -p ; echo
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH
+#export PATH=$PATH:$GOPATH
+export PATH="$PATH:$GOPATH:$HOME/.rvm/bin" # Add go & RVM to PATH for scripting
 
 # Add SSH key to key ring
 #ssh-add -k ~/.ssh/id_rsa
@@ -91,3 +92,4 @@ function bright_green {
 	# 38 = Bright Green
 	echo "[0;38;49m$@"
 }
+
